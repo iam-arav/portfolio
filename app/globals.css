@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default Theme (Royal) - Slate & Indigo */
+  --background: #020617; /* Slate 950 */
+  --surface: #1e293b;    /* Slate 800 */
+  --primary: #818cf8;    /* Indigo 400 */
+  --secondary: #38bdf8;  /* Cyan 400 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='emerald'] {
+  /* Emerald Theme - Deep Green & Teal */
+  --background: #022c22; /* Teal 950 */
+  --surface: #064e3b;    /* Emerald 900 */
+  --primary: #34d399;    /* Emerald 400 */
+  --secondary: #2dd4bf;  /* Teal 400 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='crimson'] {
+  /* Crimson Theme - Dark Red & Orange */
+  --background: #2a0a0a; /* Rose 950 (Darkened) */
+  --surface: #4c0519;    /* Rose 900 */
+  --primary: #fb7185;    /* Rose 400 */
+  --secondary: #fb923c;  /* Orange 400 */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #e2e8f0; /* Always White/Light Grey text */
+  background-color: var(--background);
+  /* Smooth transition when switching themes */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
